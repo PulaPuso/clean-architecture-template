@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clean Architecture Template — dotnet new solution for ASP.NET Core 10 and Aspire</title>
+<meta name="description" content="A dotnet new solution template for Clean Architecture apps on ASP.NET Core 10 and .NET Aspire, with an Angular, React or Web API-only front end and SQLite, PostgreSQL or SQL Server. Tests wired up, ADRs included.">
+<meta property="og:title" content="Clean Architecture Template — dotnet new ca-sln">
+<meta property="og:description" content="One command gives you a layered ASP.NET Core 10 solution with Aspire orchestration, an optional Angular or React SPA, and unit, integration, functional and acceptance tests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --board:#e9edf1; --paper:#fff; --ink:#1b2733; --muted:#5d6c7b; --rule:#cfd6dd;
+    --accent:#6b4fbb;
+  }
+  * { box-sizing:border-box }
+  body { margin:0; font-family:"Public Sans","Segoe UI",system-ui,sans-serif; color:var(--ink); background:var(--board); line-height:1.5 }
+  a { color:var(--accent) }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 1.5rem }
+  header { background:var(--paper); border-bottom:1px solid var(--rule); border-top:4px solid var(--accent) }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; padding:1rem 1.5rem }
+  header b { font-size:1.05rem }
+  nav a { margin-left:1.25rem; color:var(--muted); text-decoration:none; font-size:.95rem }
+  nav a:hover { color:var(--ink) }
+  .hero { padding:3.5rem 0 2.5rem }
+  .hero h1 { font-size:clamp(2rem,4.5vw,3rem); line-height:1.1; margin:0 0 1rem; letter-spacing:-.01em; max-width:14ch }
+  .hero p { font-size:1.15rem; color:var(--muted); max-width:52ch; margin:0 0 1.75rem }
+  .cta { display:inline-flex; gap:.75rem; flex-wrap:wrap }
+  .btn { display:inline-block; padding:.7rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:500; border:1px solid var(--rule); background:var(--paper); color:var(--ink) }
+  .btn--primary { background:var(--accent); color:#fff; border-color:var(--accent) }
+  .btn:hover { border-color:var(--accent) }
+  .shot { background:var(--paper); border:1px solid var(--rule); border-radius:10px; overflow:hidden; box-shadow:0 12px 40px rgba(27,39,51,.12) }
+  .shot img { display:block; width:100% }
+  section { padding:3rem 0 }
+  section h2 { font-size:1.6rem; margin:0 0 .5rem }
+  section > .wrap > p.lead { color:var(--muted); max-width:60ch; margin:0 0 2rem }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem }
+  .step { background:var(--paper); border:1px solid var(--rule); border-radius:8px; padding:1.25rem }
+  .step b { display:block; font-size:1.05rem; margin-bottom:.35rem }
+  .step p { margin:0; color:var(--muted) }
+  .step code, .rules code { background:var(--board); padding:.1em .35em; border-radius:3px; font-size:.9em }
+  .feature { display:grid; grid-template-columns:1fr 1.4fr; gap:2rem; align-items:center; margin-bottom:3rem }
+  .feature:nth-child(even) { grid-template-columns:1.4fr 1fr }
+  .feature:nth-child(even) .text { order:2 }
+  .feature h3 { margin:0 0 .5rem; font-size:1.25rem }
+  .feature p { margin:0; color:var(--muted) }
+  .legend { list-style:none; padding:0; margin:1rem 0 0; display:grid; gap:.4rem }
+  .legend li { padding-left:1rem; border-left:5px solid var(--accent) }
+  .rules { background:var(--paper); border:1px solid var(--rule); border-radius:8px; padding:1.5rem 1.75rem }
+  .rules ol, .rules ul { margin:.5rem 0 0; padding-left:1.25rem }
+  .rules li { margin:.35rem 0 }
+  .rules .note { margin-top:1rem; padding-top:1rem; border-top:1px solid var(--rule); color:var(--muted) }
+  pre { background:var(--ink); color:#dfe7ee; padding:1rem 1.25rem; border-radius:8px; overflow:auto; font-size:.9rem; margin:0 }
+  .hero pre { margin-top:2.5rem }
+  section pre { margin-top:1.5rem }
+  footer { border-top:1px solid var(--rule); padding:2rem 0; color:var(--muted); font-size:.9rem }
+  @media (max-width:760px) { .feature, .feature:nth-child(even) { grid-template-columns:1fr } .feature:nth-child(even) .text { order:0 } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <b>Clean Architecture Template</b>
+    <nav>
+      <a href="#start">Start</a>
+      <a href="#how">What's inside</a>
+      <a href="#design">Decisions</a>
+      <a href="https://github.com/evangelosvlachos96-dotcom/clean-architecture-template">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>A complete, runnable Clean Architecture solution in one command.</h1>
+    <p>A <code>dotnet new</code> template for enterprise applications on ASP.NET Core 10 and .NET Aspire. Pick Angular, React or Web API only; pick SQLite, PostgreSQL or SQL Server. You get a layered back end, an Aspire AppHost that runs everything locally, and unit, integration, functional and acceptance test projects already wired up. A starting point you own, not a framework you depend on.</p>
+    <div class="cta">
+      <a class="btn btn--primary" href="https://github.com/evangelosvlachos96-dotcom/clean-architecture-template">View on GitHub</a>
+      <a class="btn" href="https://github.com/evangelosvlachos96-dotcom/clean-architecture-template#readme">Read the README</a>
+    </div>
+  </div>
+  <div class="wrap">
+<pre># Angular SPA + Web API + PostgreSQL
+dotnet new ca-sln -cf angular -db postgresql -o YourProjectName
+
+# React SPA + Web API + SQL Server
+dotnet new ca-sln -cf react -db sqlserver -o YourProjectName
+
+# Web API only + SQLite
+dotnet new ca-sln -cf none -db sqlite -o YourProjectName</pre>
+  </div>
+</div>
+
+<section id="start">
+  <div class="wrap">
+    <h2>Start in four steps</h2>
+    <p class="lead">Prerequisites: .NET 10 SDK. Node.js LTS only if you choose a SPA; Docker or Podman only if you choose PostgreSQL or SQL Server. SQLite, the default, needs no container.</p>
+    <div class="steps">
+      <div class="step"><b>1 · Install the template</b><p><code>dotnet new install CleanArchitecture.Template</code> from NuGet, or <code>dotnet new install ./</code> from a clone of the repo.</p></div>
+      <div class="step"><b>2 · Create a solution</b><p><code>dotnet new ca-sln --client-framework angular --database sqlite --output YourProjectName</code>. Defaults are Angular and SQLite; <code>--help</code> lists every option.</p></div>
+      <div class="step"><b>3 · Run it</b><p><code>dotnet run --project .\src\AppHost</code>. The Aspire dashboard opens with the application URLs, logs and traces.</p></div>
+      <div class="step"><b>4 · Test it</b><p><code>dotnet test</code>. Functional and integration tests start their own database through Aspire's <code>TestAppHost</code>; acceptance tests run on Playwright.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>What's inside</h2>
+    <p class="lead">Dependencies point inward. The Domain has no dependencies; Application depends on Domain; Infrastructure and Web depend on Application; the AppHost composes the runnable pieces.</p>
+    <div class="steps">
+      <div class="step"><b>Domain</b><p>Entities, value objects, enums, domain events, exceptions. No external dependencies.</p></div>
+      <div class="step"><b>Application</b><p>Use cases as MediatR commands and queries, validators, DTOs, and pipeline behaviours for validation, authorisation, logging, performance tracking and unhandled exceptions on every request.</p></div>
+      <div class="step"><b>Infrastructure</b><p>EF Core DbContext and migrations, identity, external service implementations.</p></div>
+      <div class="step"><b>Web</b><p>ASP.NET Core minimal API endpoints, OpenAPI via Scalar, and the Angular 21 or React 19 client app.</p></div>
+      <div class="step"><b>AppHost &amp; ServiceDefaults</b><p>.NET Aspire orchestration — database container, Web project, dashboard — plus shared health checks, OpenTelemetry and resilience defaults.</p></div>
+      <div class="step"><b>Tests</b><p>Domain and Application unit tests, Infrastructure integration tests, Application functional tests and Playwright acceptance tests. NUnit, Shouldly, Moq, Respawn.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="wrap">
+    <h2>Scaffolding and decisions</h2>
+    <p class="lead">The solution ships with an item template for new use cases, and the reasoning behind the shape of the template is written down.</p>
+    <div class="rules">
+      <ol>
+        <li><b>ADR-001</b> — Use EF Core in the Application layer.</li>
+        <li><b>ADR-002</b> — Aspire for orchestration and testing.</li>
+        <li><b>ADR-003</b> — MediatR contracts in the Domain.</li>
+      </ol>
+      <p class="note">Run <code>dotnet new ca-usecase</code> from <code>src/Application</code> to add a command or query with its feature folder. To work on the template itself, <code>.\build\repack.ps1</code> packs the nuspec, uninstalls the old version and installs the new one. GitHub Actions build the solution, run CodeQL, exercise every client and database combination, and publish the package on release.</p>
+    </div>
+<pre># New command
+dotnet new ca-usecase --name CreateTodoList --feature-name TodoLists --usecase-type command --return-type int
+
+# New query
+dotnet new ca-usecase -n GetTodos -fn TodoLists -ut query -rt TodosVm</pre>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    ASP.NET Core 10 · .NET Aspire · EF Core 10 · Angular 21 / React 19 · MediatR · FluentValidation · NUnit · Playwright &nbsp;·&nbsp;
+    <a href="https://github.com/evangelosvlachos96-dotcom/clean-architecture-template">Source on GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
